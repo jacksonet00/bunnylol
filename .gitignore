@@ -1,8 +1,9 @@
 # project
 /venv
+constants.py
 
 # vs code
-/__pycache__
+__pycache__
 
 # mac os
 DS_Store

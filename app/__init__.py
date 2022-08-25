@@ -1,25 +1,10 @@
 from os import environ
 from flask import Flask, request, redirect
-from redis import Redis
-
-alias_table = {
-    'wiki': 'https://notion.so'
-}
+from constants import alias_table
 
 def create_app():
     app = Flask(__name__)
     app.debug = environ.get('ENV') != '__prod__'
-
-    # r = Redis(host='redis', port=6379)
-
-    # if os.environ.get('ENV') == '__dev__':
-        # gen_data()
-
-    # @app.route('/redis')
-    # def redis():
-    #     r.incr('hits')
-    #     hits = r.get('hits')
-    #     return f'This Compose/Flask demo has been viewed {hits} time(s).'
 
     @app.route('/search')
     def bunnylol():
