@@ -6,6 +6,10 @@ services:
             - "5000:5000"
         volumes:
             - .:/code
+        environment:
+            FLASK_DEBUG: 'True'
+            FLASK_ENV: development
+            ENV: __dev__
         # depends_on:
             # - redis
     # redis:
