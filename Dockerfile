@@ -10,4 +10,4 @@ COPY . /usr/src/app
 
 CMD ["python3", "manage.py"]
 
-EXPOSE 5000
+EXPOSE $PORT
