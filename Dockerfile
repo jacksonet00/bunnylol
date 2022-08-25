@@ -8,6 +8,6 @@ RUN pip3 install -r requirements.txt
 
 COPY . /usr/src/app
 
-CMD ["python3", "manage.py"]
-
 EXPOSE $PORT
+
+CMD ["python3", "manage.py"]
