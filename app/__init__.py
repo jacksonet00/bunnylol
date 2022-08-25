@@ -1,10 +1,10 @@
-import os
+from os import environ
 from flask import Flask, request, redirect
 from redis import Redis
 
 def create_app():
     app = Flask(__name__)
-    app.debug = os.environ.get('ENV') != '__prod__'
+    app.debug = environ.get('ENV') != '__prod__'
 
     # r = Redis(host='redis', port=6379)
 
