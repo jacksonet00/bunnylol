@@ -12,6 +12,7 @@ alias_table = {
     'tasks': 'https://www.notion.so/Tasks-fdfed7742ac54430b286ce9ca60b1d1f',
     'task': 'https://www.notion.so/Tasks-fdfed7742ac54430b286ce9ca60b1d1f',
     't': 'https://www.notion.so/Tasks-fdfed7742ac54430b286ce9ca60b1d1f',
+    'cal': 'https://calendar.google.com',
 }
 
 def create_app():
