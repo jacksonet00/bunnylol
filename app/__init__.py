@@ -1,5 +1,6 @@
 from os import environ
 from flask import Flask, request, redirect
+import webbrowser
 
 # from constants import alias_table # Dict[str: str] alias => url
 
@@ -15,6 +16,15 @@ alias_table = {
     'cal': 'https://calendar.google.com',
 }
 
+tab_group_table = {
+    'money': [
+        'https://mint.intuit.com/overview',
+        'https://secure05b.chase.com/web/auth/dashboard#/dashboard/overviewAccounts/overview/multiProduct',
+        'https://secure.ally.com/dashboard',
+        'https://us.etrade.com/etx/pxy/portfolios/positions',
+    ]
+}
+
 def create_app():
     app = Flask(__name__)
     app.debug = environ.get('ENV') != '__prod__'
@@ -26,6 +36,11 @@ def create_app():
         # alias redirect
         if query in alias_table:
             return redirect(alias_table[query])
+        
+        if query in tab_group_table:
+            for tab in tab_group_table[query][1:]:
+                webbrowser.open_new_tab(tab)
+            return redirect(tab_group_table[query][0])
         
         # github search
         if query[:3] == 'gh ':
